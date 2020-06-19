@@ -14,7 +14,7 @@ export class MapComponent implements OnInit, OnChanges {
   marker: google.maps.Marker;
   lat: number;
   lng: number;
-  mapWwidth = '100%';
+  mapWidth = '100%';
   mapHeight = '100%';
 
   constructor() { }

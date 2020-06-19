@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid mt-2 ">
+    <div class="row mb-1">
+        <div class="col-md-12 col-lg-6">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selectState ? selectState : 'Select State'}}</button>
+                <div ngbDropdownMenu class="av-dropdown" aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem *ngFor="let location of states"
+                        (click)="selectedState(location)">{{location.State}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card card-small">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 list">
+                    <app-list [cityList]="citiesOfStates" (selectedCity)="onselectedCity($event)"></app-list>
+                </div>
+                <div class="col-md-12 col-lg-6 list">
+                    <app-map [geoLocations]="geoLocations" [city]="selectedCity"></app-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

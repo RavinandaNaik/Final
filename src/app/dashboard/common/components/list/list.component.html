@@ -1,0 +1,13 @@
+<div class="flex-block wrap">
+    <div class="item-info">
+        <div *ngFor="let list of cityList">
+            <div [ngClass]="{ 'select-item': selected === list.City ? true : false }" class="cursor flex-item flex-wrap"
+                (click)="getGeoLocation(list)">
+                {{list.City}}
+            </div>
+        </div>
+        <div *ngIf="cityList.length === 0">
+            <div class="av-info">-- No State Selected --</div>
+        </div>
+    </div>
+</div>
